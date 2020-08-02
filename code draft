@@ -1,0 +1,70 @@
+wine = read.csv("/Users/sangsang/Desktop/wine.csv")
+##nrmality test
+shapiro.test(wine$fixed.acidity)
+shapiro.test(wine$volatile.acidity)
+shapiro.test(wine$citric.acid)
+shapiro.test(wine$residual.sugar)
+shapiro.test(wine$chlorides)
+shapiro.test(wine$free.sulfur.dioxide)
+shapiro.test(wine$total.sulfur.dioxide)
+shapiro.test(wine$density)
+shapiro.test(wine$pH)
+shapiro.test(wine$sulphates)
+shapiro.test(wine$alcohol)
+shapiro.test(wine$quality)
+##correlation test
+cor.test(wine$fixed.acidity,wine$volatile.acidity)
+cor.test(wine$citric.acid,wine$residual.sugar)
+cor.test(wine$free.sulfur.dioxide,wine$total.sulfur.dioxide)
+cor.test(wine$chlorides,wine$density)
+cor.test(wine$pH, wine$sulphates)
+cor.test(wine$alcohol,wine$quality)
+##ANOVA test
+a1 = aov(wine$fixed.acidity~., data = wine)
+a1
+par(mfrow = c(2,2))
+plot(a1)
+a2 = aov(wine$volatile.acidity~., data = wine)
+a2
+par(mfrow = c(2,2))
+plot(a2)
+a3 = aov(wine$citric.acid~., data = wine)
+a3
+par(mfrow = c(2,2))
+plot(a3)
+a4 = aov(wine$residual.sugar~., data = wine)
+a4
+par(mfrow = c(2,2))
+plot(a4)
+a5 = aov(wine$chlorides~., data = wine)
+a5
+par(mfrow = c(2,2))
+plot(a5)
+a6 = aov(wine$free.sulfur.dioxide~., data = wine)
+a6
+par(mfrow = c(2,2))
+plot(a6)
+a7 = aov(wine$total.sulfur.dioxide~., data = wine)
+a7
+par(mfrow = c(2,2))
+plot(a7)
+a8 = aov(wine$density~., data = wine)
+a8
+par(mfrow = c(2,2))
+plot(a8)
+a9 = aov(wine$pH~., data = wine)
+a9
+par(mfrow = c(2,2))
+plot(a9)
+a10 = aov(wine$sulphates~., data = wine)
+a10
+par(mfrow = c(2,2))
+plot(a10)
+a11 = aov(wine$alcohol~., data = wine)
+a11
+par(mfrow = c(2,2))
+plot(a11)
+a12 = aov(wine$quality~., data = wine)
+a12
+par(mfrow = c(2,2))
+plot(a12)
